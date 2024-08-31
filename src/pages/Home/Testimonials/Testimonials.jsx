@@ -28,8 +28,8 @@ const Testimonials = () => {
                     rewind={true}
                     navigation={true}
                     modules={[Navigation]}
-                    className="mySwiper"
-                >
+                    className="mySwiper mt-20"
+                >  
                     {
                         reviews.map(review => <SwiperSlide
                             key={review._id}>

@@ -1,7 +1,7 @@
 
-const Menu = ({menu}) => {
+const MenuShare = ({item}) => {
 
-    const {name, image, price, recipe} = menu;
+    const {name, image, price, recipe} = item;
 
     return (
         <section className="flex items-center gap-4">
@@ -15,4 +15,4 @@ const Menu = ({menu}) => {
     );
 };
 
-export default Menu;
+export default MenuShare;

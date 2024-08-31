@@ -5,11 +5,11 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
-import img1 from '../../../assets/home/slide1.jpg'
-import img2 from '../../../assets/home/slide2.jpg'
-import img3 from '../../../assets/home/slide3.jpg'
-import img4 from '../../../assets/home/slide4.jpg'
-import img5 from '../../../assets/home/slide5.jpg'
+import img1 from '../../../assets/home/slide1.jpg';
+import img2 from '../../../assets/home/slide2.jpg';
+import img3 from '../../../assets/home/slide3.jpg';
+import img4 from '../../../assets/home/slide4.jpg';
+import img5 from '../../../assets/home/slide5.jpg';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const Categories = () => {
@@ -28,7 +28,7 @@ const Categories = () => {
                     clickable: true,
                 }}
                 modules={[FreeMode, Pagination]}
-                className="mySwiper"
+                className="mySwiper mt-20"
             >
                 <SwiperSlide>
                     <img src={img1} alt="" />
