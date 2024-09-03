@@ -15,11 +15,12 @@ const OrderFood = () => {
     const [tabIndex, setTabIndex] = useState(initialIndex);
     const [menu] = useHooks();
 
-    const drinks = menu.filter(items => items.category === 'drinks');
+    const drinksItem = menu.filter(items => items.category === 'drinks');
     const dessertItem = menu.filter(items => items.category === 'dessert');
     const pizzaItem = menu.filter(items => items.category === 'pizza');
     const saladItem = menu.filter(items => items.category === 'salad');
     const soupItem = menu.filter(items => items.category === 'soup');
+    
     return (
         <div>
             <UseHelmet
@@ -30,7 +31,7 @@ const OrderFood = () => {
                 img={orderImg}
             ></Cover>
             <Tabs className='mt-10 text-center font-bold' defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                <TabList>
+                <TabList>   
                     <Tab>Salad</Tab>
                     <Tab>Pizza</Tab>
                     <Tab>Soup</Tab>
@@ -50,7 +51,7 @@ const OrderFood = () => {
                     <OrderTab items={dessertItem}></OrderTab>
                 </TabPanel>
                 <TabPanel>
-                    <OrderTab items={drinks}></OrderTab>
+                    <OrderTab items={drinksItem}></OrderTab>
                 </TabPanel>
             </Tabs>
         </div>
