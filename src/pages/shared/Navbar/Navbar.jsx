@@ -21,19 +21,19 @@ const Navbar = () => {
         <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to='/order/salad'>Order Food</Link></li>
         <li>
-            <Link>
-                <button className="btn">
-                    <FaShoppingCart/>
-                    <div className="badge badge-secondary">+{ cart.length }</div>
+            <Link to="/dashboard/cart">
+                <button className="flex gap-2 items-center">
+                        <FaShoppingCart className="font-bolt text-xl text-orange-500"></FaShoppingCart>
+                        <p className="badge border-none text-white bg-orange-500">+{cart.length}</p>
                 </button>
             </Link>
         </li>
-        {
+        {/* {
             user ? <><li><Link onClick={handleLogOut}>Log Out</Link></li>
             </> : <>
                 <li><Link to='/login'>Login</Link></li>
             </>
-        }
+        } */}
 
     </>
 
@@ -69,7 +69,10 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-ghost text-white">Button</a>
+                {
+                    user ? <Link onClick={handleLogOut} className="btn btn-ghost">Log Out</Link> : <Link className="btn btn-ghost" to="/login">Login</Link>
+                }
+                {/* <a className="btn btn-ghost text-white">Button</a> */}
             </div>
         </div>
     );
