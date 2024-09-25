@@ -4,7 +4,7 @@ const Cover = ({ img, title }) => {
   return (
 
     <Parallax
-      blur={{ min: -30, max: 30 }}
+      blur={{ min: -20, max: 20 }}
       bgImage={img}
       bgImageAlt="the menu"
       strength={-200}

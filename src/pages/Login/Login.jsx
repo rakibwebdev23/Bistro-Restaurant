@@ -4,6 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import UseHelmet from '../../components/UseHelmet/UseHelmet';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 
@@ -11,13 +12,24 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
     console.log("location set to the foodcart", location.state);
-    
-    const { signInUser } = useContext(AuthContext);
+
+    const { signInUser, googleSignIn } = useContext(AuthContext);
     const [disable, setDisable] = useState(true);
 
     useEffect(() => {
         loadCaptchaEnginge(6);
     }, [])
+
+    const handleValidateCaptcha = (e) => {
+        const user_captcha_value = e.target.value;
+        console.log(user_captcha_value);
+        if (validateCaptcha(user_captcha_value)) {
+            setDisable(false);
+        }
+        else {
+            setDisable(true);
+        }
+    }
 
     const handleLogin = event => {
         event.preventDefault();
@@ -50,15 +62,14 @@ const Login = () => {
             });
     }
 
-    const handleValidateCaptcha = (e) => {
-        const user_captcha_value = e.target.value;
-        console.log(user_captcha_value);
-        if (validateCaptcha(user_captcha_value)) {
-            setDisable(false);
-        }
-        else {
-            setDisable(true);
-        }
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                console.log(result);
+                navigate('/');
+            })
+            .catch(error => console.log(error)
+            )
     }
 
     return (
@@ -101,6 +112,12 @@ const Login = () => {
                                 <input disabled={disable} className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
+                        <div className="text-center mt-2">
+                            <Link><button onClick={handleGoogleSignIn} className="btn md:w-3/4 btn-outline text-blue-600 btn-warning">
+                                <FaGoogle></FaGoogle>
+                                Google
+                            </button></Link>
+                        </div>
                         <p className='text-center mb-4'><small>Don't have an account ! Please <Link className='text-red-500 underline underline-offset-2' to="/signup">SignUp</Link></small></p>
                     </div>
                 </div>

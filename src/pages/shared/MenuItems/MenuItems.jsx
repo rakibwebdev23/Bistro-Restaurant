@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import useHooks from "../../../hooks/useHooks";
 import MenuShare from "./MenuShare/MenuShare";
@@ -20,7 +21,7 @@ const MenuItems = () => {
                 }
             </div>
             <div className='text-center mt-10'>
-                <button className="btn btn-outline uppercase border-0 border-b-4 font-bold">View Full Menu</button>
+                <Link to="/menu"><button className="btn btn-outline uppercase border-0 border-b-4 font-bold">View Full Menu</button></Link>
             </div>
         </section>
     );

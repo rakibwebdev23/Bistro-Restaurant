@@ -1,4 +1,3 @@
-import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import useCarts from '../../../hooks/useCarts';
 import Swal from 'sweetalert2';

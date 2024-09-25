@@ -8,16 +8,22 @@ import { FaGoogle } from 'react-icons/fa';
 
 const SignUp = () => {
 
-    const { createUser, updateUserProfile, googleSignIn } = useContext(AuthContext);
+    const { createUser, updateUserProfile, googleSignIn, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleGoogleSignUp = () => {
         googleSignIn()
             .then(result => {
                 console.log(result);
+                logOut()
+                    .then(() => {
+                        navigate("/");
+                    })
+                    .catch(error => {
+                        console.log(error);
 
+                    })
             })
-
             .catch(error => console.log(error)
             )
     }
@@ -40,7 +46,14 @@ const SignUp = () => {
                             showConfirmButton: false,
                             timer: 1500
                         });
-                        navigate('/');
+                        logOut()
+                            .then(() => {
+                                navigate("/");
+                            })
+                            .catch(error => {
+                                console.log(error);
+
+                            })
                     })
                     .catch(error => {
                         console.log(error)

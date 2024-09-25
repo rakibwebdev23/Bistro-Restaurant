@@ -1,4 +1,3 @@
-import React from 'react';
 import useCarts from '../../../hooks/useCarts';
 import CartItem from './CartItem';
 

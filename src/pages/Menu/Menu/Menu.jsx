@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import Cover from "../../shared/Cover/Cover";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import menuImg from "../../../assets/menu/banner3.jpg";
