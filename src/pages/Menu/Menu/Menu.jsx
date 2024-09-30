@@ -21,7 +21,7 @@ const Menu = () => {
     return (
         <div>
             <UseHelmet
-            helmetTitle={"Menu"}
+                helmetTitle={"Menu"}
             ></UseHelmet>
             <Cover
                 img={menuImg}
