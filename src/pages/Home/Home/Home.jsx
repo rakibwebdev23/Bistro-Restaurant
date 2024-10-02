@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import MenuItems from "../../shared/MenuItems/MenuItems";
 import Banner from "../Banner/Banner";
 import BistroBanner from "../BistroBanner/BistroBanner";

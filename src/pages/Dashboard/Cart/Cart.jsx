@@ -2,8 +2,10 @@ import useCarts from '../../../hooks/useCarts';
 import CartItem from './CartItem';
 
 const Cart = () => {
+    
     const [cart] = useCarts();
-    const totalPrice = cart.reduce((total, item) => total + item.price, 0)
+    const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+
     return (
         <div className=''>
             <div className="text-4xl font-bold flex justify-evenly uppercase items-center">

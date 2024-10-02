@@ -1,32 +1,16 @@
-import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../providers/AuthProvider';
 import { useForm } from 'react-hook-form';
 import UseHelmet from '../../components/UseHelmet/UseHelmet';
 import Swal from 'sweetalert2';
-import { FaGoogle } from 'react-icons/fa';
+import useAxiosSecurePublic from '../../hooks/useAxiosSecurePublic';
+import SocialSign from '../../components/SocialSign/SocialSign';
+import useAuth from '../../hooks/useAuth';
 
 const SignUp = () => {
 
-    const { createUser, updateUserProfile, googleSignIn, logOut } = useContext(AuthContext);
+    const { createUser, updateUserProfile, logOut } = useAuth();
     const navigate = useNavigate();
-
-    const handleGoogleSignUp = () => {
-        googleSignIn()
-            .then(result => {
-                console.log(result);
-                logOut()
-                    .then(() => {
-                        navigate("/");
-                    })
-                    .catch(error => {
-                        console.log(error);
-
-                    })
-            })
-            .catch(error => console.log(error)
-            )
-    }
+    const axiosSecurePublic = useAxiosSecurePublic();
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = (data) => {
@@ -37,22 +21,32 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log('User sign up success');
-                        reset();
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "User sign up successfully",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        logOut()
-                            .then(() => {
-                                navigate("/");
-                            })
-                            .catch(error => {
-                                console.log(error);
-
+                        // Create user entry to the database
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email
+                        }
+                        axiosSecurePublic.post("/users", userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log("User added to the database successfully");
+                                    
+                                    reset();
+                                    Swal.fire({
+                                        position: "top-end",
+                                        icon: "success",
+                                        title: "User sign up successfully",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    logOut()
+                                        .then(() => {
+                                            navigate("/");
+                                        })
+                                        .catch(error => {
+                                            console.log(error);
+                                        })
+                                }
                             })
                     })
                     .catch(error => {
@@ -130,12 +124,7 @@ const SignUp = () => {
                             </div>
 
                         </form>
-                        <div className="text-center mt-2">
-                            <Link><button onClick={handleGoogleSignUp} className="btn md:w-3/4 btn-outline text-blue-600 btn-warning">
-                                <FaGoogle></FaGoogle>
-                                Google
-                            </button></Link>
-                        </div>
+                        <SocialSign></SocialSign>
                         <p className='text-center mb-4'><small>Do you have an account ! Please <Link className='text-red-500 underline underline-offset-2' to="/login">Login</Link></small></p>
                     </div>
                 </div>
