@@ -18,7 +18,7 @@ const SignUp = () => {
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+                console.log(loggedUser);        
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         // Create user entry to the database

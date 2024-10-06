@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
                 element: <Cart></Cart>
             },
 
-            // dashboard all routes
+            // Admin all routes
             {
                 path: "allUsers",
                 element: <AllUsers></AllUsers>

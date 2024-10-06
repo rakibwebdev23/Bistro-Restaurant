@@ -3,10 +3,12 @@ import { IoCartSharp } from "react-icons/io5";
 import { MdOutlineRestaurantMenu, MdPayment, MdRateReview } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import useCarts from "../hooks/useCarts";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
     const [cart] = useCarts();
-    const isAdmin = true;
+    // isAdmin call from useAdmin
+    const [isAdmin] = useAdmin();
     return (
         <div className="flex">
             {/* dashboard sidebar */}
@@ -74,7 +76,7 @@ const Dashboard = () => {
                         <MdOutlineRestaurantMenu />
                         Menu
                     </NavLink></li>
-                    <li><NavLink to="/order/salad">
+                    <li><NavLink to="/order/contact">
                         <FaEnvelope></FaEnvelope>
                         Contact
                     </NavLink></li>
