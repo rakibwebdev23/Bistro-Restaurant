@@ -1,17 +1,23 @@
+import { Link } from 'react-router-dom';
 import useCarts from '../../../hooks/useCarts';
 import CartItem from './CartItem';
 
 const Cart = () => {
-    
+
     const [cart] = useCarts();
-    const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+    const totalPrices = cart.reduce((total, item) => total + item.price, 0);
+    const totalPrice = totalPrices.toFixed(4);
 
     return (
-        <div className=''>
+        <div>
             <div className="text-4xl font-bold flex justify-evenly uppercase items-center">
                 <h2>Items: {cart.length}</h2>
                 <h2>Total Price: {totalPrice}</h2>
-                <button className="btn btn-outline btn-warning">Pay</button>
+
+                {
+                    cart.length ? <Link to="/dashboard/payement"><button className="btn btn-outline btn-warning">Pay</button></Link> : <button disabled className="btn btn-outline btn-warning">Pay</button>
+                }
+
             </div>
             <div className='mt-10'>
                 <div className="overflow-x-auto p-6">

@@ -3,7 +3,7 @@ import './BistroBanner.css';
 const BistroBanner = () => {
     return (
         <div
-            className="bistro hero h-[700px] mt-20">
+            className="bistro hero h-[700px] my-20">
             <div className="hero-content text-center">
                 <div className="md:h-[300px] w-[75%] bg-white flex items-center">
                     <div className='px-24'>

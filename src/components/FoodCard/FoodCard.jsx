@@ -62,7 +62,7 @@ const FoodCard = ({ item }) => {
                 <img src={image} alt="Item" />
 
             </figure>
-            <p className='absolute right-0 bg-slate-800 text-white px-2 m-8'>{price}</p>
+            <p className='absolute right-0 bg-slate-800 text-white px-2 m-8'>$ {price}</p>
             <div className="card-body">
                 <h2 className="card-title text-left font-bold">{name}</h2>
                 <p className='text-left'>{recipe}</p>

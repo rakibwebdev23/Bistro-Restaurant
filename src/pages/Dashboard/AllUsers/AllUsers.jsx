@@ -14,7 +14,7 @@ const AllUsers = () => {
             const res = await axiosSecure.get('/users');
             return res.data;
         }
-    })
+    });
 
     const handleMakeAdmin = user => {
         axiosSecure.patch(`/users/admin/${user._id}`)
@@ -77,7 +77,7 @@ const AllUsers = () => {
         <div>
             <div className="text-4xl font-bold flex justify-evenly uppercase items-center">
                 <h2>All Users</h2>
-                <h2>Total Users {users.length}</h2>
+                <h2>Total Users: {users.length}</h2>
             </div>
             <div className="overflow-x-auto mt-10">
                 <table className="table">

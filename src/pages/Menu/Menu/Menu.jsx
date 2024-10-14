@@ -27,10 +27,12 @@ const Menu = () => {
                 img={menuImg}
                 title={'our menu'}
             ></Cover>
-            <SectionTitle
-                subHeading={"Don't miss"}
-                heading={"Todays offer"}
-            ></SectionTitle>
+            <div className="mt-20">
+                <SectionTitle
+                    subHeading={"Don't miss"}
+                    heading={"Todays offer"}
+                ></SectionTitle>
+            </div>
             <TodaysOffer items={todayOffer}></TodaysOffer>
             <TodaysOffer items={dessertItem} title={"dessert"} img={dessertImg}></TodaysOffer>
             <TodaysOffer items={pizzaItem} title={"pizza"} img={pizzaImg}></TodaysOffer>

@@ -47,9 +47,9 @@ const Dashboard = () => {
                                     <FaCalendar></FaCalendar>
                                     Reservation
                                 </NavLink></li>
-                                <li><NavLink to="/dashboard/payment">
+                                <li><NavLink to="/dashboard/booking">
                                     <MdPayment></MdPayment>
-                                    Payment History
+                                    Add Booking
                                 </NavLink></li>
                                 <li><NavLink to="/dashboard/cart">
                                     <IoCartSharp></IoCartSharp>
@@ -59,9 +59,9 @@ const Dashboard = () => {
                                     <MdRateReview></MdRateReview>
                                     Add Review
                                 </NavLink></li>
-                                <li><NavLink to="/dashboard/booking">
+                                <li><NavLink to="/dashboard/paymentHistory">
                                     <FaAddressBook></FaAddressBook>
-                                    Add Booking
+                                    Payment History
                                 </NavLink></li>
                             </>
                     }
