@@ -14,7 +14,7 @@ const SignUp = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        console.log(data)
+        // console.log(data)
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
@@ -29,7 +29,7 @@ const SignUp = () => {
                         axiosSecurePublic.post("/users", userInfo)
                             .then(res => {
                                 if (res.data.insertedId) {
-                                    console.log("User added to the database successfully");
+                                    // console.log("User added to the database successfully");
                                     
                                     reset();
                                     Swal.fire({

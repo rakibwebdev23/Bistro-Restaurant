@@ -18,8 +18,11 @@ const SocialSign = () => {
 
                 axiosSecurePublic.post("/users", userInfo)
                     .then(res => {
-                        console.log(res.data);
-                        navigate("/");
+                        // console.log(res.data);
+                        if (res.data) {
+                            navigate("/");
+                        }
+
                     })
             })
             .catch(error => console.error(error))

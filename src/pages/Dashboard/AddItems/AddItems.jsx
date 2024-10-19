@@ -33,7 +33,7 @@ const AddItems = () => {
                 image: res.data.data.display_url
             }
             const menuRes = await axiosSecure.post('/menu', menuItem)
-            console.log(menuRes.data);
+            // console.log(menuRes.data);
             if (menuRes.data.insertedId) {
                 // show menu item add success popup
                 reset();
@@ -47,7 +47,7 @@ const AddItems = () => {
             }
             
         }
-        console.log(res.data);
+        // console.log(res.data);
 
     }
 
