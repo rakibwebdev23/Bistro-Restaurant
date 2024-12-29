@@ -22,16 +22,16 @@ const Navbar = () => {
         <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to='/order/salad'>Order Food</Link></li>
         {
-            user && isAdmin && <li><Link to='/dashboard/adminHome'>Admin Home</Link></li>
+            user && isAdmin && <li><Link to='/dashboard/adminHome'>Dashboard</Link></li>
         }
         {
-            user && !isAdmin && <li><Link to='/dashboard/userHome'>Order Food</Link></li> 
+            user && !isAdmin && <li><Link to='/dashboard/userHome'>Dashboard</Link></li> 
         }
         <li>
             <Link to="/dashboard/cart">
                 <button className="flex gap-2 items-center">
                     <FaShoppingCart className="font-bolt text-xl text-orange-500"></FaShoppingCart>
-                    <p className="badge border-none text-white bg-orange-500">+{cart.length}</p>
+                    <p className="badge border-none text-white bg-orange-500">{cart.length}</p>
                 </button>
             </Link>
         </li>

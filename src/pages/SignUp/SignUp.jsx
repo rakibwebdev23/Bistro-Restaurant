@@ -9,8 +9,8 @@ import useAuth from '../../hooks/useAuth';
 const SignUp = () => {
 
     const { createUser, updateUserProfile, logOut } = useAuth();
-    const navigate = useNavigate();
     const axiosSecurePublic = useAxiosSecurePublic();
+    const navigate = useNavigate();
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = (data) => {

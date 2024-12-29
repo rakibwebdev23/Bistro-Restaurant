@@ -20,7 +20,7 @@ const useAxiosSecure = () => {
             return Promise.reject(error);
         });
 
-    // interceptor 401 and 403
+    // interceptor 401 and 403 error status
     axiosSecure.interceptors.response.use(function (response) {
         return response;
     },

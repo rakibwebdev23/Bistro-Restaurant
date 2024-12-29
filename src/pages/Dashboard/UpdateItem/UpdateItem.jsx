@@ -36,7 +36,7 @@ const UpdateItem = () => {
                 image: res.data.data.display_url
             }
             const menuRes = await axiosSecure.patch(`/menu/${_id}`, menuItem)
-            if (menuRes.data.insertedId) {
+            if (menuRes.data.modifiedCount > 0) {
                 // show menu item update success popup
                 reset();
                 Swal.fire({

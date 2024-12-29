@@ -36,11 +36,11 @@ const Categories = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={img2} alt="" />
-                    <h2 className='text-3xl text-center font-bold text-gray-500 -mt-20 uppercase'>pizza</h2>
+                    <h2 className='text-3xl text-center font-bold text-gray-500 uppercase -mt-20'>pizza</h2>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={img3} alt="" />
-                    <h2 className='text-3xl text-center font-bold text-gray-500 -mt-20 uppercase'>soup</h2>
+                    <h2 className='text-3xl text-center font-bold text-gray-500 uppercase -mt-20'>soup</h2>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={img4} alt="" />
