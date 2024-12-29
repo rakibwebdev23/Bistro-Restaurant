@@ -5,7 +5,7 @@ const BistroBanner = () => {
         <div
             className="bistro hero h-[700px] my-20">
             <div className="hero-content text-center">
-                <div className="md:h-[300px] w-[75%] bg-white flex items-center">
+                <div className="md:h-[300px] w-[75%]  bg-white flex items-center">
                     <div className='px-24'>
                         <h1 className="mb-5 text-5xl font-bold uppercase">Bistro Boss</h1>
                         <p className="mb-5">

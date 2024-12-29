@@ -4,6 +4,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { FaBook, FaDollarSign, FaUsers } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, PieChart, Pie, Legend } from 'recharts';
+import { Link } from "react-router-dom";
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
@@ -56,8 +57,8 @@ const AdminHome = () => {
     };
 
     const pieChartData = chartData.map(data => {
-        return {name: data.category, value: data.totalRevenue}
-    })
+        return { name: data.category, value: data.totalRevenue }
+    });
 
     return (
         <div>
@@ -65,7 +66,7 @@ const AdminHome = () => {
                 <span>Hi, Welcome</span>
                 <span className="text-orange-500 ml-2">
                     {
-                        user?.displayName ? user.displayName : 'Back'
+                        user?.displayName ? user.displayName : <Link className="btn btn-ghost" to="/">Back</Link>
                     }
                 </span>
             </h2>
